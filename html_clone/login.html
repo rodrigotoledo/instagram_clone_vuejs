@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Clone - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fade {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .animate-fade {
+      animation: fade 24s infinite;
+      position: absolute;
+      top: 22px;
+      right: 60px;
+      width: 250px;
+      height: 541px;
+      object-fit: cover;
+    }
+    .image-1 { animation-delay: 0s; }
+    .image-2 { animation-delay: 6s; }
+    .image-3 { animation-delay: 12s; }
+    .image-4 { animation-delay: 18s; }
+  </style>
+</head>
+<body class="bg-black text-white flex items-center flex-col justify-center min-h-screen">
+  <div class="flex flex-col lg:flex-row items-center lg:space-x-16">
+    <div class="relative hidden lg:block w-[465px] h-[635px] bg-cover bg-center" 
+         style="background-image: url('./assets/images/home-phones.png');">
+      <!-- Static foreground image -->
+      <img 
+        src="./assets/images/screenshot1.png" 
+        alt="Static Screenshot" 
+        class="animate-fade image-1"
+      />
+      <!-- Animated images -->
+      <img 
+        src="./assets/images/screenshot2.png" 
+        alt="Dynamic Screenshot 1" 
+        class="animate-fade image-2"
+      />
+      <img 
+        src="./assets/images/screenshot3.png" 
+        alt="Dynamic Screenshot 2" 
+        class="animate-fade image-3"
+      />
+      <img 
+        src="./assets/images/screenshot4.png" 
+        alt="Dynamic Screenshot 3" 
+        class="animate-fade image-4"
+      />
+    </div
+
+    <!-- Right Column with Form -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-md w-[350px]">
+      <h1 class="text-3xl font-bold text-center mb-6">Instagram</h1>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username or email"
+            class="w-full px-4 py-2 border border-gray-700 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="w-full px-4 py-2 border border-gray-700 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Log In
+          </button>
+        </div>
+      </form>
+      <div class="text-center mt-4">
+        <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+      </div>
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-400">
+          Don't have an account? 
+          <a href="#" class="text-blue-500 font-medium hover:underline">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full text-center py-6 text-sm text-gray-500 absolute bottom-0">
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Help</a>
+      <a href="#" class="hover:underline">Privacy</a>
+      <a href="#" class="hover:underline">Terms</a>
+      <a href="#" class="hover:underline">Contact</a>
+    </div>
+    <p class="mt-2">&copy; 2024 Instagram Clone</p>
+  </footer>
+</body>
+</html>
