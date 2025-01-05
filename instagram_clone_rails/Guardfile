@@ -1,0 +1,51 @@
+guard :rspec, cmd: "bundle exec rspec" do
+  require "guard/rspec/dsl"
+  dsl = Guard::RSpec::Dsl.new(self)
+
+  # RSpec files
+  rspec = dsl.rspec
+  watch(rspec.spec_helper) { rspec.spec_dir }
+  watch(rspec.spec_support) { rspec.spec_dir }
+  watch(rspec.spec_files)
+
+  # Ruby files
+  ruby = dsl.ruby
+  dsl.watch_spec_files_for(ruby.lib_files)
+
+  # Rails files
+  rails = dsl.rails(view_extensions: %w(erb haml slim))
+  dsl.watch_spec_files_for(rails.app_files)
+  dsl.watch_spec_files_for(rails.views)
+
+  # Jobs
+  watch(%r{^app/jobs/(.+)\.rb$}) { |m| rspec.spec.call("jobs/#{m[1]}_spec") }
+
+  # Mailers
+  watch(%r{^app/mailers/(.+)\.rb$}) { |m| rspec.spec.call("mailers/#{m[1]}_spec") }
+
+  # Services
+  watch(%r{^app/services/(.+)\.rb$}) { |m| rspec.spec.call("services/#{m[1]}_spec") }
+
+  # Helpers
+  watch(%r{^app/helpers/(.+)\.rb$}) { |m| rspec.spec.call("helpers/#{m[1]}_spec") }
+
+  # Validations
+  watch(%r{^app/validators/(.+)\.rb$}) { |m| rspec.spec.call("validators/#{m[1]}_spec") }
+
+  # Configurations
+  watch(%r{^config/(initializers/.+|environment(s|/.*))\.rb$}) { rspec.spec_dir }
+
+  # Routes, controllers, and views
+  watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
+  watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
+  watch(rails.view_dirs)       { |m| rspec.spec.call("features/#{m[1]}") }
+
+  # Capybara features
+  watch(%r{^spec/acceptance/(.+)\.feature$})
+  watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
+    Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
+  end
+
+  # Guardfile changes
+  watch('Guardfile') { rspec.spec_dir }
+end
