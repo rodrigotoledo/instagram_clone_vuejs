@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Clone - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Main Container -->
+  <div class="flex flex-col lg:flex-row lg:h-screen">
+    <!-- Sidebar -->
+    <nav class="hidden lg:block lg:w-1/4 bg-white border-r border-gray-200 h-full p-4">
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-2">
+          <img src="/path/to/logo.png" alt="Instagram Logo" class="w-6 h-6">
+          <span class="font-bold text-lg">Instagram</span>
+        </li>
+        <li>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-100">
+            <span class="material-icons">home</span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-100">
+            <span class="material-icons">search</span>
+            <span>Search</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-100">
+            <span class="material-icons">explore</span>
+            <span>Explore</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-100">
+            <span class="material-icons">favorite</span>
+            <span>Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-100">
+            <span class="material-icons">person</span>
+            <span>Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Center Column -->
+    <main class="flex-1 lg:w-2/4 p-4">
+      <div class="space-y-6">
+        <!-- Post -->
+        <div class="border border-gray-200 rounded-lg bg-white">
+          <div class="flex items-center p-4">
+            <img src="/path/to/user-avatar.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-medium">username</p>
+              <p class="text-sm text-gray-500">Location</p>
+            </div>
+          </div>
+          <img src="/path/to/post-image.jpg" alt="Post Image" class="w-full h-auto">
+          <div class="p-4 space-y-2">
+            <div class="flex items-center space-x-4">
+              <span class="material-icons cursor-pointer">favorite_border</span>
+              <span class="material-icons cursor-pointer">chat_bubble_outline</span>
+              <span class="material-icons cursor-pointer">send</span>
+            </div>
+            <p class="text-sm"><span class="font-bold">username</span> Caption text goes here...</p>
+          </div>
+        </div>
+        <!-- Add more posts as needed -->
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="hidden lg:block lg:w-1/4 bg-white border-l border-gray-200 h-full p-4">
+      <div class="flex items-center space-x-4">
+        <img src="/path/to/user-avatar.jpg" alt="Your Avatar" class="w-12 h-12 rounded-full">
+        <div>
+          <p class="font-bold">your_username</p>
+          <p class="text-sm text-gray-500">Your Name</p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <p class="font-medium text-gray-500">Suggestions for you</p>
+        <!-- Suggested Users -->
+        <div class="mt-4 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="/path/to/avatar.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            <div class="flex-1">
+              <p class="font-medium text-sm">username1</p>
+              <p class="text-xs text-gray-500">Suggested for you</p>
+            </div>
+            <button class="text-blue-500 text-sm font-medium">Follow</button>
+          </div>
+          <!-- Add more suggestions as needed -->
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Bottom Navigation for Smaller Screens -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 lg:hidden">
+    <ul class="flex justify-around py-2">
+      <li>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <span class="material-icons">home</span>
+          <span class="text-xs">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <span class="material-icons">search</span>
+          <span class="text-xs">Search</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <span class="material-icons">add_box</span>
+          <span class="text-xs">Add</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <span class="material-icons">favorite</span>
+          <span class="text-xs">Likes</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <span class="material-icons">person</span>
+          <span class="text-xs">Profile</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>
